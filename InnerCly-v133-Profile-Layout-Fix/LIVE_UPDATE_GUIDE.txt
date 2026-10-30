@@ -1,0 +1,34 @@
+INNERCLY v133 PROFILE PAGE UPDATE
+- Desktop profile tabs, counts, cover and profile content now have scoped styling.
+- Existing profile logic and mobile profile styles remain unchanged.
+
+INNERCLY v132 GROUP CHAT COMPOSER UPDATE
+- The group-chat composer has a responsive desktop/mobile layout for writing, attaching a photo, recording, stopping and sending.
+- Stop appears only while recording. Existing IDs and event handlers are preserved.
+
+INNERCLY v131 — MOBILE NOTIFICATIONS, SEARCH AND MEMBER PROFILES
+
+This is a separate candidate package. It does not update Render or GitHub automatically.
+
+Included in this candidate:
+- Premium plans: $2.99 monthly, $29 for three months, $129 lifetime.
+- Active blue/purple/gold/green verification badges and the Owner account receive Premium without paying; Premium does not grant verification.
+- Ad-free entitlement, profile themes, Premium Story effects, Creator Growth analytics, personal chat themes, and early-access eligibility.
+- Kilos wallet and ledger, verified Stripe Checkout fulfilment, live-stream virtual gifts (80% creator / 20% InnerCly), and Owner revenue reporting.
+- Traditional advertising accounting: 55% to creator / 45% to InnerCly. Marketplace USD checkout: exact Stripe processor fee deducted from seller proceeds plus 5% of gross sale to InnerCly.
+- Follow button state fix across Friends search/lists, inline post actions, and Discover/creator cards.
+
+Before any live deployment, configure Stripe test credentials/webhook on the hosting service and test in Stripe test mode. Payments are intentionally unavailable without both keys. Creator payout marking is an Owner reconciliation after an external transfer; it does not move money automatically. Live streaming is basic peer-to-peer WebRTC and has not been tested at production scale.
+
+To test safely:
+1. Extract into a new folder.
+2. Run START_INNERCLY.bat.
+3. Test sign-in, Friends search, Follow/Following, friend requests, Stories, Premium, Kilos, and Live.
+4. Only use Stripe test credentials until the full payment and payout setup has been reviewed.
+
+Do not overwrite the working v114 service, and leave the v40/v80 master backups unchanged.
+
+
+V131 mobile usability updates: notification toasts appear above the mobile bottom tabs, the header search opens server-backed Discover results, and member names/avatars and View profile controls open public member profiles.
+
+V131 live-video/profile fixes: Home now embeds the live camera video, preserves the active player while refreshing, buffers early ICE candidates, and shows the first shared live stream as a muted inline preview. Mobile Edit Profile now saves display name, username, bio and profile picture. Real two-phone playback still needs a physical HTTPS test; TURN may be required on restrictive mobile networks.

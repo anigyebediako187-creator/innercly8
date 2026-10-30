@@ -1,0 +1,23 @@
+InnerCly v133 validation report
+
+Requested change:
+- Fixed the profile page rendering shown in the supplied screenshot. On desktop widths, the existing profile markup had no matching styles because its main stylesheet was limited to the mobile breakpoint. Added a desktop stylesheet scoped to #myProfile.
+
+Scope:
+- Changed only the profile presentation CSS, build-version metadata, launcher version text, and release documentation.
+- All 15 inline JavaScript blocks are byte-for-byte unchanged from v132. Existing profile tab click handling, Edit Profile dialog, authentication/session logic, API calls, posts, friends and other app handlers were not rewritten.
+- The existing mobile profile styles are preserved.
+- No database migration or schema change.
+- v40 and v80 master backup files are byte-for-byte unchanged.
+
+Checks:
+- Python compilation for main.py, launch_app.py, currency_registry.py: PASS.
+- FastAPI TestClient /api/build: PASS (reports v133).
+- All 15 inline JavaScript blocks: PASS (Node.js syntax checks).
+- Desktop Chromium layout preview (1680x945): PASS; profile cover, overlap avatar/actions, statistics, tabs, composer, post card render with styled layout.
+- Mobile Chromium layout preview (390x844): PASS; existing mobile styles remain applied, side rails remain hidden and no horizontal overflow.
+- Original index.html comparison after removing the new scoped style and restoring the v132 version markers: PASS; no other HTML or JavaScript changes.
+- ZIP integrity: PASS (verified after packaging).
+
+Not performed:
+- No real-account login, photo upload, or live hosted end-to-end test was run for this visual-only change.

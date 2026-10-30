@@ -1,0 +1,21 @@
+INNERCLY v133 — PROFILE PAGE LAYOUT FIX
+
+This is a visual-only update based on the v132 package.
+
+WHAT CHANGED
+- Styled the desktop profile page so the cover, profile picture, Edit Profile/settings controls, member details, statistics, and tabs no longer appear as unstyled standalone HTML.
+- Styled profile posts, About details, Photos grid, and Friends list.
+- Kept the existing mobile profile styling.
+
+WHAT DID NOT CHANGE
+- No account, login/session, database, post, Stories, live-stream, search, notifications, messaging, friends, monetization, or payment behavior was changed.
+- Existing profile markup and JavaScript event handlers were left in place.
+- The v40 and v80 master backups remain unchanged.
+
+TO TEST
+1. Extract the ZIP into a separate folder.
+2. Run START_INNERCLY.bat.
+3. Open My Profile on a desktop browser and on a phone-sized screen.
+4. Check Posts, About, Photos, Friends, and Edit Profile.
+
+Do not open index.html directly; InnerCly needs its API and database. This ZIP does not deploy to Render or update GitHub automatically.
